@@ -26,3 +26,22 @@ Format
     }
 ]
 ```
+
+Server Store Interface
+----------------------
+
+**GET**
+```
+/records/
+/records/[id]
+/find/description/[searchString]
+/find/client/[searchString]
+```
+**DELETE**
+```
+/records/[id]
+```
+**PUT**
+```
+/records/
+```
