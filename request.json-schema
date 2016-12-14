@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "touch recorder request format",
+  "type": "object",
+  "required": [ "requests" ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "version of the request format"
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [ "id", "name", "descriptions" ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "request identification (send back in response)"
+          },
+          "name": {
+            "type": "string",
+            "description": "text that is displayed in the app"
+          },
+          "details": {
+            "type": "string",
+            "description": "more detailed description (may contain stats)"
+          },
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "description of a request item"
+            }
+          }
+        }
+      }
+    }
+  }
+}

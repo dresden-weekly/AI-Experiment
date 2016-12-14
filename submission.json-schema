@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "touch recorder submission format",
+  "type": "object",
+  "required": [ "archive" ],
+  "properties": {
+    "archive": {
+      "type": "array",
+      "items": {
+        "description": "a recorded drawing",
+        "type": "object",
+        "required": [ "strokes", "description" ],
+        "properties": {
+          "strokes": {
+            "type": "array",
+            "items": {
+              "description": "a stroke",
+              "type": "array",
+              "items": {
+                  "description": "touch event",
+                  "type": "object",
+                  "required": [ "x", "y", "p", "t" ],
+                  "properties": {
+                      "x": { "type": "number", "description": "horizontal position of touch pixels" },
+                      "y": { "type": "number", "description": "vertical position of touch pixels" },
+                      "p": { "type": "number", "description": "touch pressure (between 0 and 1)" },
+                      "t": { "type": "number", "description": "time inside the drawing (seconds)" }
+                  }
+              }
+            }
+          },
+          "description": {
+            "type": "string",
+            "description": "what is in the drawing"
+          },
+          "client": {
+            "type": "string",
+            "description": "about the software used for creation"
+          }
+        }
+      }
+    },
+    "request_id": {
+      "type": "string",
+      "description": "info about the requested set from the server"
+    },
+    "author_id": {
+      "type": "string",
+      "description": "identifier of the author"
+    }
+  }
+}
