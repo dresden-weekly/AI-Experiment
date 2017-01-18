@@ -13,35 +13,17 @@ Project goals:
 Format
 ------
 
-```json
-[
-    {
-        "strokes":[
-          [{"x":1.0,"y":1.0,"t":0,"p":0.5427},{"x":1.2,"y":1.4,"t":0.13124,"p":0.12412},...],
-          [{"x":3.1,"y":2.4,"t":1.232,"p":0.2427},{"x":1.6,"y":1.4,"t":1.33124,"p":0.12412},...],
-          ...
-        ],
-        "description":"6",
-        "client":"QT"
-    }
-]
-```
+see [challenges.json-schema](challenges.json-schema) and [submission.json-schema](submission.json-schema)
 
-Server Store Interface
+Webserver REST API
 ----------------------
 
 **GET**
 ```
-/records/
-/records/[id]
-/find/description/[searchString]
-/find/client/[searchString]
+/api/challenges => JSON
 ```
-**DELETE**
+
+**POST**
 ```
-/records/[id]
-```
-**PUT**
-```
-/records/
+/api/submission Content-Type: application/json Body: {submission: JSON}
 ```
