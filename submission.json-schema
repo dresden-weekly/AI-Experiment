@@ -40,11 +40,11 @@
         }
       }
     },
-    "request_id": {
-      "type": "string",
+    "challenge_id": {
+      "type": "number",
       "description": "info about the requested set from the server"
     },
-    "author_id": {
+    "author": {
       "type": "string",
       "description": "identifier of the author"
     }
